@@ -14,8 +14,7 @@ class RegistrationPage extends BasePage{
         this.elements.securityQuestionDropDown = 'mat-select[name="securityQuestion"]';
         this.elements.securityQuestionText = 'mat-option#mat-option-10';
         this.elements.securityAnswerField = '#securityAnswerControl';
-        this.elements.registerNewUserButton = '#registerButton'
-
+        this.elements.registerNewUserButton = '#registerButton';
     }
     getnewCustomerButton(){
         return cy.get(this.elements.newCustomerButton)
