@@ -12,6 +12,7 @@ user1.Password1 = faker.number.int(8);
 user1.Answer = faker.person.fullName();
 
 describe('Unsuccessful registration', ()=>{
+    
      beforeEach('Access the page', ()=>{
         HomePage.visit();
         HomePage.getwelcomeBannerDismissButton().click();
