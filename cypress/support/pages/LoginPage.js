@@ -30,5 +30,10 @@ fillLoginFields(user){
     this.getemailField().type(user.Email);
     this.getpasswordField().type(user.Password);
 }
+fillLoginFieldsInvalid(user1){
+    cy.log('Fill in authorization fields')
+    this.getemailField().type(user1.Email);
+    this.getpasswordField().type(user1.Password);
+}
 }
 export default new LoginPage();

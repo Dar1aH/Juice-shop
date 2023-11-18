@@ -55,5 +55,11 @@ class RegistrationPage extends BasePage{
     this.getpasswordField().type(user.Password);
     this.getrepeatPasswordField().type(user.Password);
   }  
+
+  fillRegistrationFieldsInvalid(user1){
+    this.getemailField().type(user1.Email);
+    this.getpasswordField().type(user1.Password);
+    this.getrepeatPasswordField().type(user1.Password1);
+  }
 }
 export default new RegistrationPage();
