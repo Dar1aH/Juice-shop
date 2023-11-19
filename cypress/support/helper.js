@@ -27,11 +27,24 @@ export function FillAddNewAddressForm(shopper){
     cy.get('#mat-input-15').type(shopper.State);
     cy.get('#submitButton').click();  
 }
+
 export function FillAddNewCardFields(shopper){
-    cy.get('#mat-input-16').type(shopper.Name);
-    cy.get('#mat-input-17').type(shopper.CardNumber);
-    cy.get('#mat-input-18').select('5').should('have.value', '5');
-    cy.get('#mat-input-19').select('2082').should('have.value', '2082');
+    cy.get('#mat-input-17').type(shopper.Name);
+    cy.get('#mat-input-18').type(shopper.CardNumber);
+    cy.get('#mat-input-19').select('5').should('have.value', '5');
+    cy.get('#mat-input-20').select('2082').should('have.value', '2082');
     cy.get('#submitButton').click();
     cy.get('#mat-radio-44').click();
+}
+
+export function findProduct(productName){
+    cy.get('body').then(body =>{
+        if (body.find(`.item-name:contains("${productName}")`).length > 0){
+            cy.get(`.item-name:contains("${productName}")`).click();
+        } else{
+            cy.get('div.mat-paginator-range-actions [aria-label="Next page"]').click({ force: true });
+            findProduct(productName);
+    }
+    
+});
 }
