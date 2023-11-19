@@ -38,14 +38,15 @@ it('Order a product', ()=>{
     OrderProduct.getContinueToPaymentButton().click();
 
     cy.contains('Choose a delivery speed');
+
     OrderProduct.getDeliverySpeedRadioOption1().click();
     OrderProduct.getDeliverySpeedRadioOption2().should('not.be.checked');
     OrderProduct.getDeliverySpeedRadioOption3().should('not.be.checked');
     OrderProduct.getDeliverySectionButton().click();
     
     cy.contains('My Payment Options');
-
     cy.log('Add a credit or debit card');
+    
     OrderProduct.getAddNewCardDropDown().click();
     FillAddNewCardFields(shopper);
      
