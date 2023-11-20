@@ -15,7 +15,7 @@ class OrderProduct extends BasePage{
     this.elements.DeliverySpeedRadioOption2 = '#mat-radio-42';
     this.elements.DeliverySpeedRadioOption3 = '#mat-radio-43';
     this.elements.DeliverySectionButton = '[aria-label="Proceed to delivery method selection"]';
-    this.elements.AddNewCardDropDown = '#mat-expansion-panel-header-1';
+    this.elements.AddNewCardDropDown = '#mat-expansion-panel-header-0';
     this.elements.ReviewOrderButton = '[aria-label="Proceed to review"]';
     this.elements.CompleteOrderButton = '[aria-label="Complete your purchase"]';
 

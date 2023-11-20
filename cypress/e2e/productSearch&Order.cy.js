@@ -8,7 +8,7 @@ import OrderProduct from '../support/pages/OrderProduct';
 import orderData from '../fixtures/order.json'
 import shopper from '../fixtures/shopper.json'
 import { FillAddNewAddressForm } from '../support/helper'
-import { FillAddNewCardFields } from '../support/helper';
+import {  MyPaymentOptionsForm } from '../support/helper';
 
 
 it('Search for a product and place an order', ()=>{
@@ -54,8 +54,7 @@ it('Search for a product and place an order', ()=>{
     cy.contains('My Payment Options');
 
     cy.log('Add a credit or debit card');
-    OrderProduct.getAddNewCardDropDown().click();
-    FillAddNewCardFields(shopper);
+    MyPaymentOptionsForm(shopper);
      
     cy.log('Review and Complete the order');
 

@@ -29,6 +29,16 @@ export function FillAddNewAddressForm(shopper){
 }
 
 export function FillAddNewCardFields(shopper){
+    cy.get('#mat-input-16').type(shopper.Name);
+    cy.get('#mat-input-17').type(shopper.CardNumber);
+    cy.get('#mat-input-18').select('5').should('have.value', '5');
+    cy.get('#mat-input-19').select('2082').should('have.value', '2082');
+    cy.get('#submitButton').click();
+    cy.get('#mat-radio-44').click();
+}
+
+export function MyPaymentOptionsForm(shopper){
+    cy.get('#mat-expansion-panel-header-1').click()
     cy.get('#mat-input-17').type(shopper.Name);
     cy.get('#mat-input-18').type(shopper.CardNumber);
     cy.get('#mat-input-19').select('5').should('have.value', '5');

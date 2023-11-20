@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-import { login } from '../support/helper'
+import { FillAddNewCardFieldsFirst, login } from '../support/helper'
 import { faker } from "@faker-js/faker";
 import user from '../fixtures/user.json';
 import shopper from '../fixtures/shopper.json'
