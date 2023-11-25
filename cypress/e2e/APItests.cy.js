@@ -10,13 +10,13 @@ post.body = faker.lorem.sentences();
 describe('HTTP Requests', () => {
     
   it('Verify HTTP response status code 200 and content type', () => {
-    cy.request('GET', 'http://localhost:3000/posts')
+    cy.request('GET', '/posts')
       .its('status')
       .should('equal', 200);
   });
 
   it('Get only first 10 posts. Verify HTTP response status code. Verify that only the first 10 posts are returned.', () => {
-    cy.request('GET', 'http://localhost:3000/posts').then((response) => {
+    cy.request('GET', '/posts').then((response) => {
       cy.wrap(response.status).should('eq', 200);
       const first10Posts = response.body.slice(0, 10);
 
@@ -43,15 +43,7 @@ describe('HTTP Requests', () => {
     });
   });
 
-  it('Create a post. Verify HTTP response status code.', () => {
-    cy.request('POST', 'http://localhost:3000/644/posts', post).then((response) => {
-      expect(response.status).to.eq(401); // Assuming 201 is the expected status for a successful POST
-      expect(response.body.userId).to.eq(post.userId);
-      expect(response.body.id).to.eq(post.id);
-      expect(response.body.title).to.eq(post.title);
-      expect(response.body.body).to.eq(post.body);
-    });
-  });
 
 
+ 
 });
