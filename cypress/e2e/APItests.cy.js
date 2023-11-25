@@ -7,6 +7,7 @@ post.id = faker.number.int({ min: 101, max: 20000 });
 post.title = faker.lorem.sentence();
 post.body = faker.lorem.sentences();
 
+
 describe('HTTP Requests', () => {
     
   it('Verify HTTP response status code 200 and content type', () => {
@@ -45,7 +46,7 @@ describe('HTTP Requests', () => {
     });
   });
 
-  it.only('Should send a POST request to create a post and verify 401 response', () => {
+  it('Should send a POST request to create a post and verify 401 response', () => {
     const postData = {
       userId: post.userId,
       id: post.id,
@@ -64,5 +65,6 @@ describe('HTTP Requests', () => {
 
     });
   });
- 
+
+  
 });
