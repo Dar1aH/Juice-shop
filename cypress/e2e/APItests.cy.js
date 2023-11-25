@@ -15,6 +15,7 @@ describe('HTTP Requests', () => {
       .should('equal', 200);
   });
 
+  
   it('Get only first 10 posts. Verify HTTP response status code. Verify that only the first 10 posts are returned.', () => {
     cy.request('GET', '/posts').then((response) => {
       cy.wrap(response.status).should('eq', 200);
@@ -26,6 +27,7 @@ describe('HTTP Requests', () => {
       cy.wrap(first10Posts).should('have.length', 10);
     });
   });
+
 
   it('Get posts with id = 55 and id = 60. Verify HTTP response status code. Verify id values of returned records.', () => {
     cy.request('GET', 'http://localhost:3000/posts').then((response) => {
@@ -43,7 +45,24 @@ describe('HTTP Requests', () => {
     });
   });
 
+  it.only('Should send a POST request to create a post and verify 401 response', () => {
+    const postData = {
+      userId: post.userId,
+      id: post.id,
+      title: post.title,
+      content: post.body,
+    };
 
+    cy.request({
+      method: 'POST',
+      url: 'http://localhost:3000/644/posts',
+      body: postData,
+      failOnStatusCode: false, 
+    }).then((response) => {
 
+      expect(response.status).to.eq(401);
+
+    });
+  });
  
 });
