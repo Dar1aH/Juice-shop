@@ -65,6 +65,5 @@ describe('HTTP Requests', () => {
 
     });
   });
-
   
 });
