@@ -11,13 +11,16 @@ post.body = faker.lorem.sentences();
 describe('HTTP Requests', () => {
     
   it('Verify HTTP response status code 200 and content type', () => {
-
     cy.request('GET', '/posts')
       .its('status')
       .should('equal', 200);
+  
+    cy.request('GET', '/posts')
+      .its('headers')
+      .its('content-type')
+      .should('equal', 'text/html; charset=UTF-8');
   });
 
-  
   it('Get only first 10 posts. Verify HTTP response status code. Verify that only the first 10 posts are returned.', () => {
 
     cy.request('GET', '/posts').then((response) => {
