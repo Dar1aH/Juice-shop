@@ -51,3 +51,4 @@ post.body = faker.lorem.sentences();
           expect(response.status).to.eq(404);
         });
       });
+      
